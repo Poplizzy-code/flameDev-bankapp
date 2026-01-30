@@ -131,7 +131,7 @@ class SignupForm {
       `Welcome ${user.fullName}! Signup successful.\nYour account number is ${user.accountNumber}`,
     );
 
-    window.location.href = "dashboard.html";
+    window.location.href = "index.html";
   }
 }
 
