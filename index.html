@@ -1,582 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlameDev Bank | Dashboard</title>
-    <link rel="stylesheet" href="dist/styles.css" />
-  </head>
-  <body
-    class="min-h-screen bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 text-gray-800">
-    <div class="max-w-5xl mx-auto p-4 md:p-6" id="dashboard">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlameDev Bank | Welcome</title>
+  <link rel="stylesheet" href="dist/styles.css">
+</head>
+<body class="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 text-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div class="flex flex-col md:flex-row justify-between items-center mb-6">
-        <div class="flex items-center space-x-3 mb-4 md:mb-0">
-          <div>
-            <h1 class="text-2xl font-bold text-white">
-              Welcome, <span id="userName" class="text-yellow-200"></span>
-            </h1>
-            <p class="text-gray-100 text-sm">
-              Account No: <span id="accountNo"></span>
-            </p>
-          </div>
-        </div>
-        <div>
-          <div
-            id="transactionsBtn"
-            class="bg-white text-orange-500 px-4 py-2 rounded-xl shadow hover:bg-orange-50 font-semibold transition text-sm md:text-base cursor-pointer">
-            Transaction History
-          </div>
+    <section class="flex flex-col-reverse md:flex-row items-center justify-between min-h-screen py-12">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-6">Bank Smarter with FlameDev</h1>
+        <p class="text-gray-100 text-lg mb-6">Manage your finances, pay bills, buy airtime, and keep your money safe—all from one modern banking app.</p>
+        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+          <a href="signup.html" class="bg-white text-orange-600 font-semibold py-3 px-6 rounded-lg shadow hover:bg-orange-50 transition">Sign Up</a>
+          <a href="login.html" class="bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-orange-600 transition">Login</a>
         </div>
       </div>
-      <div class="bg-white rounded-3xl shadow-xl p-6 mb-6">
-        <p class="text-gray-500 text-sm">Current Balance</p>
-        <p class="text-3xl font-bold text-orange-600 mt-1" id="balance">₦0</p>
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <img src="multimedia/newlandingbap.png" alt="Banking Illustration" class="rounded-3xl shadow-lg">
       </div>
+    </section>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-6">
-        <div
-          id="deposit"
-          class="bg-white shadow-lg rounded-xl p-4 flex flex-col items-center hover:bg-orange-50 transition cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-orange-500 mb-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 8v8m4-4H8" />
+    <section class="py-12">
+      <h2 class="text-3xl font-bold text-white text-center mb-10">Features</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="bg-white rounded-2xl shadow-xl p-6 hover:scale-105 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-orange-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m4-4H8"/>
           </svg>
-          <span class="font-medium text-gray-700 text-center text-sm"
-            >Deposit</span
-          >
+          <h3 class="font-bold text-lg mb-2">Deposit & Withdraw</h3>
+          <p class="text-gray-600 text-sm">Quickly manage your funds in FlameDev or your bank.</p>
         </div>
-
-        <div
-          id="depositFlameDevBtn"
-          class="bg-white shadow-lg rounded-xl p-4 flex flex-col items-center hover:bg-orange-50 transition cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-orange-500 mb-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 8v8m4-4H8" />
+        <div class="bg-white rounded-2xl shadow-xl p-6 hover:scale-105 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-orange-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
           </svg>
-          <span class="font-medium text-gray-700 text-center text-sm"
-            >Deposit FlameDev</span
-          >
+          <h3 class="font-bold text-lg mb-2">Airtime</h3>
+          <p class="text-gray-600 text-sm">Top up your phone instantly from your balance.</p>
         </div>
-
-        <div
-          id="depositBankBtn"
-          class="bg-white shadow-lg rounded-xl p-4 flex flex-col items-center hover:bg-orange-50 transition cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-orange-500 mb-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 8v8m4-4H8" />
+        <div class="bg-white rounded-2xl shadow-xl p-6 hover:scale-105 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-orange-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h6v6h5v-8H4v8h5z"/>
           </svg>
-          <span class="font-medium text-gray-700 text-center text-sm"
-            >Deposit Bank</span
-          >
+          <h3 class="font-bold text-lg mb-2">Bills Payment</h3>
+          <p class="text-gray-600 text-sm">Pay electricity, water, and other bills in one place.</p>
         </div>
-
-        <div
-          id="withdrawBtn"
-          class="bg-white shadow-lg rounded-xl p-4 flex flex-col items-center hover:bg-orange-50 transition cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-orange-500 mb-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 4v16m4-4H8" />
+        <div class="bg-white rounded-2xl shadow-xl p-6 hover:scale-105 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-orange-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 .28-.11.53-.29.71l-4.71 4.71a1 1 0 01-1.42-1.42l4.71-4.71c.18-.18.43-.29.71-.29z"/>
           </svg>
-          <span class="font-medium text-gray-700 text-center text-sm"
-            >Withdraw</span
-          >
-        </div>
-
-        <div
-          id="airtimeBtn"
-          class="bg-white shadow-lg rounded-xl p-4 flex flex-col items-center hover:bg-orange-50 transition cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-orange-500 mb-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 13l4 4L19 7" />
-          </svg>
-          <span class="font-medium text-gray-700 text-center text-sm"
-            >Airtime</span
-          >
-        </div>
-
-        <div
-          id="dataBtn"
-          class="bg-white shadow-lg rounded-xl p-4 flex flex-col items-center hover:bg-orange-50 transition cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-orange-500 mb-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5 13l4 4L19 7" />
-          </svg>
-          <span class="font-medium text-gray-700 text-center text-sm"
-            >Data</span
-          >
-        </div>
-
-        <div
-          id="billsBtn"
-          class="bg-white shadow-lg rounded-xl p-4 flex flex-col items-center hover:bg-orange-50 transition cursor-pointer">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8 text-orange-500 mb-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 17v-6h6v6h5v-8H4v8h5z" />
-          </svg>
-          <span class="font-medium text-gray-700 text-center text-sm"
-            >Other Bills</span
-          >
+          <h3 class="font-bold text-lg mb-2">Secure & Reliable</h3>
+          <p class="text-gray-600 text-sm">Your money is safe with industry-leading security standards.</p>
         </div>
       </div>
+    </section>
 
-      <div class="bg-white rounded-3xl shadow-xl p-6">
-        <h2 class="text-xl font-bold text-orange-600 mb-4">
-          Recent Transactions
-        </h2>
-        <ul class="divide-y divide-gray-200">
-          <li class="py-2 flex justify-between">
-            <span>Deposit to FlameDev</span>
-            <span class="font-medium text-green-500">+₦50,000</span>
-          </li>
-          <li class="py-2 flex justify-between">
-            <span>Withdraw</span>
-            <span class="font-medium text-red-500">-₦20,000</span>
-          </li>
-          <li class="py-2 flex justify-between">
-            <span>Airtime Purchase</span>
-            <span class="font-medium text-red-500">-₦2,000</span>
-          </li>
-        </ul>
+    <section class="text-center py-12">
+      <h2 class="text-3xl font-bold text-white mb-6">Get Started Today</h2>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="signup.html" class="bg-white text-orange-600 font-semibold py-3 px-6 rounded-lg shadow hover:bg-orange-50 transition">Sign Up</a>
+        <a href="login.html" class="bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-orange-600 transition">Login</a>
       </div>
-    </div>
-
-    <div
-      id="depositForm"
-      class="hidden max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6 space-y-4">
-      <h2 class="text-xl font-bold text-orange-600">Deposit</h2>
-      <input
-        id="depositAmt"
-        type="number"
-        placeholder="Amount"
-        class="w-full p-2 border rounded" />
-      <button
-        id="depositNext"
-        class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-        Next
-      </button>
-    </div>
-
-    <div
-      id="depositPin"
-      class="hidden flex flex-col items-center gap-6 max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6">
-      <h2 class="text-xl font-bold text-orange-600">Enter Transaction Pin</h2>
-      <input
-        type="password"
-        id="depositPinDisplay"
-        maxlength="4"
-        readonly
-        class="p-3 text-center text-2xl tracking-widest border rounded bg-gray-100" />
-
-      <div class="space-y-3 mt-2">
-        <div class="flex gap-8">
-          <button class="pin-btn">1</button><button class="pin-btn">2</button
-          ><button class="pin-btn">3</button>
-        </div>
-        <div class="flex gap-8">
-          <button class="pin-btn">4</button><button class="pin-btn">5</button
-          ><button class="pin-btn">6</button>
-        </div>
-        <div class="flex gap-8">
-          <button class="pin-btn">7</button><button class="pin-btn">8</button
-          ><button class="pin-btn">9</button>
-        </div>
-        <div class="flex gap-8">
-          <button id="clearDepositPin">C</button>
-          <button class="pin-btn">0</button>
-          <button id="deleteDepositPin">⌫</button>
-        </div>
-      </div>
-
-      <button
-        id="confirmDepositBtn"
-        class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-        Confirm
-      </button>
-    </div>
-
-    <div
-      id="depositFlameDevForm"
-      class="hidden max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6 space-y-4">
-      <h2 class="text-xl font-bold text-orange-600">Deposit to FlameDev</h2>
-      <input
-        id="flameDevAccNo"
-        type="text"
-        placeholder="Account No"
-        class="w-full p-2 border rounded" />
-      <input
-        id="flameDevDepositAmt"
-        type="number"
-        placeholder="Amount"
-        class="w-full p-2 border rounded" />
-      <button
-        id="depositFlameDevNext"
-        class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-        Next
-      </button>
-    </div>
-
-    <div
-      id="withdrawForm"
-      class="hidden max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6 space-y-4">
-      <h2 class="text-xl font-bold text-orange-600">Withdraw</h2>
-      <input
-        id="withdrawAmt"
-        type="number"
-        placeholder="Amount"
-        class="w-full p-2 border rounded" />
-      <button
-        id="withdrawNext"
-        class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-        Next
-      </button>
-    </div>
-
-    <div
-      id="withdrawPin"
-      class="hidden flex flex-col items-center gap-6 max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6">
-      <h2 class="text-xl font-bold text-orange-600">Enter Transaction Pin</h2>
-      <input
-        type="password"
-        id="withdrawPinDisplay"
-        maxlength="4"
-        readonly
-        class="p-3 text-center text-2xl tracking-widest border rounded bg-gray-100" />
-
-      <div class="space-y-3 mt-2">
-        <div class="flex gap-8">
-          <button class="withdraw-pin-btn">1</button
-          ><button class="withdraw-pin-btn">2</button
-          ><button class="withdraw-pin-btn">3</button>
-        </div>
-        <div class="flex gap-8">
-          <button class="withdraw-pin-btn">4</button
-          ><button class="withdraw-pin-btn">5</button
-          ><button class="withdraw-pin-btn">6</button>
-        </div>
-        <div class="flex gap-8">
-          <button class="withdraw-pin-btn">7</button
-          ><button class="withdraw-pin-btn">8</button
-          ><button class="withdraw-pin-btn">9</button>
-        </div>
-        <div class="flex gap-8">
-          <button id="withdrawFlamePin">C</button>
-          <button class="withdraw-pin-btn">0</button>
-          <button id="deleteWithdrawPin">⌫</button>
-        </div>
-      </div>
-
-      <button
-        id="confirmWithdrawBtn"
-        class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-        Confirm
-      </button>
-    </div>
-
-    <div
-      id="depositFlameDevPin"
-      class="hidden flex flex-col items-center gap-6 max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6">
-      <h2 class="text-xl font-bold text-orange-600">Enter Transaction Pin</h2>
-      <input
-        type="password"
-        id="depositFlamePinDisplay"
-        maxlength="4"
-        readonly
-        class="p-3 text-center text-2xl tracking-widest border rounded bg-gray-100" />
-
-      <div class="space-y-3 mt-2">
-        <div class="flex gap-8">
-          <button class="flame-pin-btn">1</button
-          ><button class="flame-pin-btn">2</button
-          ><button class="flame-pin-btn">3</button>
-        </div>
-        <div class="flex gap-8">
-          <button class="flame-pin-btn">4</button
-          ><button class="flame-pin-btn">5</button
-          ><button class="flame-pin-btn">6</button>
-        </div>
-        <div class="flex gap-8">
-          <button class="flame-pin-btn">7</button
-          ><button class="flame-pin-btn">8</button
-          ><button class="flame-pin-btn">9</button>
-        </div>
-        <div class="flex gap-8">
-          <button id="clearFlamePin">C</button>
-          <button class="flame-pin-btn">0</button>
-          <button id="deleteFlamePin">⌫</button>
-        </div>
-      </div>
-
-      <button
-        id="confirmFlameDevBtn"
-        class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-        Confirm
-      </button>
-    </div>
-
-<div
-  id="airtimeForm"
-  class="hidden max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6 space-y-4">
-  <h2 class="text-xl font-bold text-orange-600">Buy Airtime</h2>
-  <select id="airtimeNetwork" class="w-full p-2 border rounded">
-    <option value="">Select Network</option>
-    <option value="MTN">MTN</option>
-    <option value="Airtel">Airtel</option>
-    <option value="Glo">Glo</option>
-    <option value="9mobile">9mobile</option>
-  </select>
-  <input
-    id="airtimePhone"
-    type="tel"
-    placeholder="Phone Number"
-    class="w-full p-2 border rounded" />
-  <input
-    id="airtimeAmt"
-    type="number"
-    placeholder="Amount"
-    class="w-full p-2 border rounded" />
-  <button
-    id="airtimeNext"
-    class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-    Next
-  </button>
-</div>
-
-<div
-  id="airtimePin"
-  class="hidden flex flex-col items-center gap-6 max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6">
-  <h2 class="text-xl font-bold text-orange-600">Enter Transaction Pin</h2>
-  <input
-    type="password"
-    id="airtimePinDisplay"
-    maxlength="4"
-    readonly
-    class="p-3 text-center text-2xl tracking-widest border rounded bg-gray-100" />
-
-  <div class="space-y-3 mt-2">
-    <div class="flex gap-8">
-      <button class="airtime-pin-btn">1</button><button class="airtime-pin-btn">2</button><button class="airtime-pin-btn">3</button>
-    </div>
-    <div class="flex gap-8">
-      <button class="airtime-pin-btn">4</button><button class="airtime-pin-btn">5</button><button class="airtime-pin-btn">6</button>
-    </div>
-    <div class="flex gap-8">
-      <button class="airtime-pin-btn">7</button><button class="airtime-pin-btn">8</button><button class="airtime-pin-btn">9</button>
-    </div>
-    <div class="flex gap-8">
-      <button id="clearAirtimePin">C</button>
-      <button class="airtime-pin-btn">0</button>
-      <button id="deleteAirtimePin">⌫</button>
-    </div>
+    </section>
   </div>
-
-  <button
-    id="confirmAirtimeBtn"
-    class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-    Confirm
-  </button>
-</div>
-
-<div
-  id="dataForm"
-  class="hidden max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6 space-y-4">
-  <h2 class="text-xl font-bold text-orange-600">Buy Data</h2>
-  <select id="dataNetwork" class="w-full p-2 border rounded">
-    <option value="">Select Network</option>
-    <option value="MTN">MTN</option>
-    <option value="Airtel">Airtel</option>
-    <option value="Glo">Glo</option>
-    <option value="9mobile">9mobile</option>
-  </select>
-  <input
-    id="dataPhone"
-    type="tel"
-    placeholder="Phone Number"
-    class="w-full p-2 border rounded" />
-  <select id="dataPlan" class="w-full p-2 border rounded">
-    <option value="">Select Data Plan</option>
-    <option value="1GB-500">1GB - ₦500</option>
-    <option value="2GB-1000">2GB - ₦1,000</option>
-    <option value="5GB-2000">5GB - ₦2,000</option>
-    <option value="10GB-3500">10GB - ₦3,500</option>
-    <option value="20GB-6000">20GB - ₦6,000</option>
-  </select>
-  <button
-    id="dataNext"
-    class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-    Next
-  </button>
-</div>
-
-<div
-  id="dataPin"
-  class="hidden flex flex-col items-center gap-6 max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6">
-  <h2 class="text-xl font-bold text-orange-600">Enter Transaction Pin</h2>
-  <input
-    type="password"
-    id="dataPinDisplay"
-    maxlength="4"
-    readonly
-    class="p-3 text-center text-2xl tracking-widest border rounded bg-gray-100" />
-
-  <div class="space-y-3 mt-2">
-    <div class="flex gap-8">
-      <button class="data-pin-btn">1</button><button class="data-pin-btn">2</button><button class="data-pin-btn">3</button>
-    </div>
-    <div class="flex gap-8">
-      <button class="data-pin-btn">4</button><button class="data-pin-btn">5</button><button class="data-pin-btn">6</button>
-    </div>
-    <div class="flex gap-8">
-      <button class="data-pin-btn">7</button><button class="data-pin-btn">8</button><button class="data-pin-btn">9</button>
-    </div>
-    <div class="flex gap-8">
-      <button id="clearDataPin">C</button>
-      <button class="data-pin-btn">0</button>
-      <button id="deleteDataPin">⌫</button>
-    </div>
-  </div>
-
-  <button
-    id="confirmDataBtn"
-    class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-    Confirm
-  </button>
-</div>
-
-<div
-  id="billsForm"
-  class="hidden max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6 space-y-4">
-  <h2 class="text-xl font-bold text-orange-600">Pay Bills</h2>
-  <select id="billType" class="w-full p-2 border rounded">
-    <option value="">Select Bill Type</option>
-    <option value="Electricity">Electricity</option>
-    <option value="Cable TV">Cable TV</option>
-    <option value="Internet">Internet</option>
-    <option value="Water">Water</option>
-  </select>
-  <input
-    id="billCustomerId"
-    type="text"
-    placeholder="Customer ID / Meter Number"
-    class="w-full p-2 border rounded" />
-  <input
-    id="billAmt"
-    type="number"
-    placeholder="Amount"
-    class="w-full p-2 border rounded" />
-  <button
-    id="billsNext"
-    class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-    Next
-  </button>
-</div>
-
-<div
-  id="billsPin"
-  class="hidden flex flex-col items-center gap-6 max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6">
-  <h2 class="text-xl font-bold text-orange-600">Enter Transaction Pin</h2>
-  <input
-    type="password"
-    id="billsPinDisplay"
-    maxlength="4"
-    readonly
-    class="p-3 text-center text-2xl tracking-widest border rounded bg-gray-100" />
-
-  <div class="space-y-3 mt-2">
-    <div class="flex gap-8">
-      <button class="bills-pin-btn">1</button><button class="bills-pin-btn">2</button><button class="bills-pin-btn">3</button>
-    </div>
-    <div class="flex gap-8">
-      <button class="bills-pin-btn">4</button><button class="bills-pin-btn">5</button><button class="bills-pin-btn">6</button>
-    </div>
-    <div class="flex gap-8">
-      <button class="bills-pin-btn">7</button><button class="bills-pin-btn">8</button><button class="bills-pin-btn">9</button>
-    </div>
-    <div class="flex gap-8">
-      <button id="clearBillsPin">C</button>
-      <button class="bills-pin-btn">0</button>
-      <button id="deleteBillsPin">⌫</button>
-    </div>
-  </div>
-
-  <button
-    id="confirmBillsBtn"
-    class="bg-orange-500 text-white px-4 py-2 rounded w-full">
-    Confirm
-  </button>
-</div>
-
-<div
-  id="transactionHistory"
-  class="hidden max-w-5xl mx-auto md:p-6 bg-white rounded-3xl shadow-xl mb-6">
-  <div class="flex justify-between items-center mb-4">
-    <h2 class="text-xl font-bold text-orange-600">Transaction History</h2>
-    <button
-      id="backToDashboardBtn"
-      class="bg-orange-500 text-white px-4 py-2 rounded text-sm">
-      Back
-    </button>
-  </div>
-  <ul id="transactionList" class="divide-y divide-gray-200">
-  </ul>
-</div>
-
-    <script src="dashboard.js"></script>
-  </body>
+</body>
 </html>
